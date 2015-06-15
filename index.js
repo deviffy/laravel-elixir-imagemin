@@ -22,7 +22,7 @@ elixir.extend('imagemin', function(src, output, options) {
 
     var config = this;
 
-    var baseDir = config.assetsDir + 'img';
+    var baseDir = config.assetsDir + 'images';
 
     src = utilities.buildGulpSrc(src, baseDir, '**/*');
 
@@ -35,7 +35,7 @@ elixir.extend('imagemin', function(src, output, options) {
     gulp.task('imagemin', function() {
         return gulp.src(src)
             .pipe(imagemin(options))
-            .pipe(gulp.dest(output || 'public/img'))
+            .pipe(gulp.dest(output || 'public/images'))
             .on('error', notify.onError({
                 title: 'ImageMin Failed!',
                 message: 'Failed to optimise images.',
